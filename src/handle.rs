@@ -73,6 +73,7 @@ pub fn dump(dir: String) -> Result<()> {
     let mut cmd = Command::new("tcpdump")
         .arg("-i")
         .arg(interface.name.as_str())
+        .arg("-l")
         .stdout(Stdio::piped())
         .spawn()
         .expect("Failed to execute command.");

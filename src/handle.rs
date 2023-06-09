@@ -70,7 +70,7 @@ fn create_file(interface: &Device, dir: String, content: String) -> Result<()> {
 
 pub fn dump(dir: String) -> Result<()> {
     let interface = &Device::list().unwrap()[0];
-    let mut cmd = Command::new("tcpdump")
+    let mut cmd = Command::new("sudo tcpdump")
         .arg("-i")
         .arg(interface.name.as_str())
         .stdout(Stdio::piped())
